@@ -1,14 +1,82 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-<title>CV</title>
+    <title>CV</title>
+    <style>
+        body{font-family:Arial; margin:0; padding:0;background-color: darkolivegreen;color:orangered;}
+        header{text-allign:center; padding:20px; border-bottom:2px solid #ff6a00;}
+        .image-container{
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .image-container img{
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .image-container: hover img{
+            transform: scale(1.1);
+        }
+        .text{
+            color:aqua;
+        }
+        .nume{
+            color: blue;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: right;
+        }
+        .prenume{
+            color: yellow;
+            font-family: 'Cambria Math';
+            text-align: center;
+        }
+        .adresa{
+            color:red;
+            font-family: Algerian;
+        }
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td{
+            border: 2px solid #7d208e;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th{
+            background-color: green;
+            color: white;
+        }
+
+        .hobby{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-<h1>Date identificare</h1>
-    <p>Nume: Măgurean</p>
-    <p>Prenume: Matei</p>
-    <p>Email: mateimagurean@gmail.com</p>
-    <img src="poza cu mine.jpg" alt="Eu" width="154", height="142" />
+    <div class="text">
+        <h1>Date identificare</h1>
+    </div>
+    <div class="nume">
+        <p>Nume: Măgurean</p>
+    </div>
+    <div class="prenume">
+        <p>Prenume: Matei</p>
+    </div>
+    <div class="adresa">
+        <p>Email: mateimagurean@gmail.com</p>
+    </div>
+    <div class="image-container">
+        <img src="poza cu mine.jpg" alt="Eu" width="154" , height="142" />
+    </div>
     <p>
         Text/Citat:<br />
         Ma astept ca dupa terminarea acestei facultati sa de vin un inginer calificat in domeniul informaticii
@@ -25,20 +93,25 @@
 
 
     </p>
-    <table>Hobby-uri:
-        <tr>
-            <th>Jucatul pe calculator</th>
-        </tr>
-        <tr>
-            <th>Editarea video</th>
-        </tr>
-        <tr>
-            <th>Condusul</th>
-        </tr>
+    <div class="hobby">
+        <table>
+            Hobby-uri:
+            <tr>
+                <th>Jucatul pe calculator</th>
+            </tr>
+            <tr>
+                <th>Editarea video</th>
+            </tr>
+            <tr>
+                <th>Condusul</th>
+            </tr>
+
+
+        </table>
+    </div>
     
     
-    </table>
-    
+
 
 
 
