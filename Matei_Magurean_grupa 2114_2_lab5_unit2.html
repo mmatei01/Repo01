@@ -3,9 +3,21 @@
 <head>
     <title>CV</title>
     <style>
-        body{font-family:Arial; margin:0; padding:0;background-color: darkolivegreen;color:orangered;}
-        header{text-allign:center; padding:20px; border-bottom:2px solid #ff6a00;}
-        .image-container{
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: darkolivegreen;
+            color: orangered;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            border-bottom: 2px solid #ff6a00;
+        }
+
+        .image-container {
             width: 300px;
             height: 300px;
             overflow: hidden;
@@ -13,59 +25,77 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
         }
-        .image-container img{
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.3s ease;
+
+            .image-container img {
+                width: 100%;
+                height: auto;
+                display: block;
+                transition: transform 0.3s ease;
+            }
+
+            .image-container:hover img {
+                transform: scale(1.1);
+            }
+
+        .text {
+            color: aqua;
         }
-        .image-container: hover img{
-            transform: scale(1.1);
-        }
-        .text{
-            color:aqua;
-        }
-        .nume{
+
+        .nume {
             color: blue;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: right;
         }
-        .prenume{
+
+        .prenume {
             color: yellow;
             font-family: 'Cambria Math';
             text-align: center;
         }
-        .adresa{
-            color:red;
+
+        .adresa {
+            color: red;
             font-family: Algerian;
         }
-        table{
+
+        table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
         }
 
-        th, td{
+        th, td {
             border: 2px solid #7d208e;
             padding: 10px;
             text-align: center;
         }
 
-        th{
+        th {
             background-color: green;
             color: white;
         }
 
-        .hobby{
+        .hobby {
             text-align: center;
+        }
+
+       
+        #birthyear {
+            cursor: pointer;
+            color: blue;
+            font-weight: bold;
+            font-size: 20px;
+            transition: color 0.3s ease;
         }
     </style>
 </head>
-<body>
-    <div class="text">
+<body id="mbody">
+
+    <header>
         <h1>Date identificare</h1>
-    </div>
-    <div class="nume">
+    </header>
+
+    <div class="nume" id="numeprenume">
         <p>Nume: Măgurean</p>
     </div>
     <div class="prenume">
@@ -74,47 +104,70 @@
     <div class="adresa">
         <p>Email: mateimagurean@gmail.com</p>
     </div>
+
     <div class="image-container">
-        <img src="poza cu mine.jpg" alt="Eu" width="154" , height="142" />
+        <img id="profileimg" src="poza cu mine.jpg" alt="Eu" width="154" height="142" />
     </div>
+
     <p>
         Text/Citat:<br />
-        Ma astept ca dupa terminarea acestei facultati sa de vin un inginer calificat in domeniul informaticii
-
-
-
+        Ma astept ca dupa terminarea acestei facultati sa devin un inginer calificat in domeniul informaticii.
     </p>
+
     <p>
         Liste discipline pentru aprofundare: <br />
         <a href="https://etti.utcluj.ro/files/Acasa/Site/FiseDisciplina/TstRo/04a.pdf">I. Programarea calculatoarelor si limbaje de programare(anul I)</a> <br />
         <a href="https://etti.utcluj.ro/files/Acasa/Site/FiseDisciplina/TstRo/06.pdf">II. Informatica aplicata(anul I)</a><br />
         <a href="https://etti.utcluj.ro/files/Acasa/Site/FiseDisciplina/TstRo/01a.pdf">III. Analiza matematica(anul I)</a>
-
-
-
     </p>
+
     <div class="hobby">
         <table>
             Hobby-uri:
             <tr>
-                <th>Jucatul pe calculator</th>
+                <th id="rand1-realizare">Jucatul pe calculator</th>
+                <th id="rand1-perioada">2010</th>
+                <th id="rand1-link"><a href="#">Link</a></th>
             </tr>
             <tr>
-                <th>Editarea video</th>
+                <th id="rand2-realizare">Editarea video</th>
+                <th id="rand2-perioada">2017</th>
+                <th id="rand2-link"><a href="#">Link</a></th>
             </tr>
             <tr>
-                <th>Condusul</th>
+                <th id="rand3-realizare">Condusul</th>
+                <th id="rand3-perioada">2023</th>
+                <th id="rand3-link"><a href="#">Link</a></th>
             </tr>
-
-
         </table>
     </div>
-    
-    
 
 
+    <div id="birthdate" style="text-align: center; margin-top: 20px;">
+        <h3 id="birthyear" onmouseover="showAge()" onmouseout="resetYear()">Anul: 2005</h3>
+    </div>
 
 
+    <button onclick="changeProfile()">Alta viata</button>
+
+ 
+    <script src="ex1.js"></script>
+
+   
+    <script>
+       
+        function showAge() {
+            var birthYear = 2005; 
+            var currentYear = new Date().getFullYear();
+            var age = currentYear - birthYear; 
+            document.getElementById("birthyear").innerHTML = "Varsta: " + age + " ani";
+        }
+
+        
+        function resetYear() {
+            document.getElementById("birthyear").innerHTML = "Anul: 2005";
+        }
+    </script>
 
 </body>
 </html>
